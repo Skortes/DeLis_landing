@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen,projection" href="ui.totop.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <title>DeLis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(window).scroll(function() {
+                if($(this).scrollTop() != 0) {
+                    $('#toTop').fadeIn();
+                } else {
+                    $('#toTop').fadeOut();
+                }
+            });
+
+            $('#toTop').click(function() {
+
+                $('body,html').animate({scrollTop:0},800);
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+<!--Плавная прокрутка -->
+<script>
+    document.addEventListener("click", function(event){
+        var url = location.href.slice(0, location.href.length - location.hash.length);
+        var targetHref = event.target.href || "";
+        if(targetHref.slice(0, url.length) === url && targetHref[url.length] === "#"){
+            event.preventDefault();
+            var hash = targetHref.slice(url.length + 1);
+            var element = document.getElementById(hash);
+            if(element){
+                var scrollTo = element.getBoundingClientRect().top;
+                smorthScrollTo(scrollTo);
+            }
+        }
+    });
+
+    function smorthScrollTo(to){
+        var newScrollY = window.scrollY;
+        var loop = function(){
+            newScrollY += (to - newScrollY) / 15;
+
+            if(Math.abs(newScrollY - to) <= 1){
+                newScrollY = to;
+            }else{
+                requestAnimationFrame(loop);
+            }
+            window.scrollTo(window.scrollX, newScrollY);
+        };
+
+        loop();
+    };
+</script>
+<div class="index_font">
+    <div class="index_content">
+        <header id="header">
+            <!--Логоти-->
+            <div id="header_logo">
+                <a href="#index" >
+                    <div id="header_logo_img"></div>
+                    <div id="header_name_company">DeLis</div>
+                </a>
+            </div>
+            <!--Конец Логотипа-->
+            <div id="header_soc">
+                <a href="#vk">
+                    <div id="vk"></div>
+                </a>
+                <a href="#twiter">
+                    <div id="twiter"></div>
+                </a>
+                <a href="#faces">
+                    <div id="faces"></div>
+                </a>
+            </div>
+            <div id="header_menu">
+                <ul>
+                    <li><a class="header_link" href="#g">ГЛАВНАЯ</a> </li>
+                    <li><a class="header_link" href="#yak1">О НАС</a> </li>
+                    <li><a class="header_link" href="#yak2">ПОРТФОЛИО</a> </li>
+                    <li><a class="header_link" href="#k">КАК ЭТО РАБОТАЕТ</a> </li>
+                    <li><a class="header_link" href="#b">БЛОГ</a> </li>
+                    <li><a class="header_link" href="#f">FAQ</a> </li>
+                </ul>
+            </div>
+        </header>
+        <div id="index">
+            <center>
+                <div class="index1">НЕЗАБЫВАЕМАЯ ВЫЕЗДНАЯ РОСПИСЬ</div>
+                <div class="index2">Проведите романтичную церемонию в любом удобном для Вас месте</div>
+                <div class="button_index">
+                    <button class="podrop">ПОДРОБНЕЕ</button>
+                    <button class="zakaz">ЗАКАЗАТЬ</button>
+                </div>
+                <div class="down">
+                    <a href="#yak1">
+                        <div id = "arrows"></div>
+                    </a>
+                </div>
+            </center>
+        </div>
+    </div>
+</div>
+<div id="wrapper">
+    <div id="yak1">
+        <div id="onas">
+            <p class="p1"> ХОТИТЕ ЛИ ВЫ ПРЕВРАТИТЬ РОСПИСЬ В <font color="red"> НЕЧТО БОЛЬШЕЕ</font> , ЧЕМ В ПРОСТО ПРОЦЕДУРА? ТОГДА ВЫ В ПРАВИЛЬНОМ МЕСТЕ.</p>
+            <p class="p2"><b>Выездная роспись</b> - это альтернатива росписи в ЗАГС. Молодожены расписываются теперь
+                в любом <font color="red"> удобном</font> для них месте - в ресторане, на море, в лесу и т.д. Вся торжественная часть проходит
+                в присутстви гостей. Теперь не нужно ехать в ЗАГС и скучать. Церемония бракосочетания проводится
+                Ведущей церемонии под определенную, хорошо подобранную <font color="red">музыку</font>. Официальный документ выдает ЗАГС,
+                а торжественная часть проводится нами.
+            </p>
+            <div class="p3">
+                <img class="person1" src="images/Rectangle2.png" width="193" >
+                <img class="person1" src="images/Rectangle21.png" width="193" >
+                <img src="images/arrows1.png" width="408" height="255" >
+                <div id="person11">
+                    <p class="person1a">ЛИЛИЯ ГАСЫМОВА</p>
+                    <p class="person1b">Ведущая</p>
+                </div>
+                <div id="person12">
+                    <p class="person1a">ВИКТОР ДМИТРИЕВИЧ</p>
+                    <p class="person1b">Звукорежиссер</p>
+                </div>
+                <div id="person13">
+                    <p class="person1a">ПРАЗДНИК НАШИМИ ГЛАЗАМИ</p>
+                    <p class="person1b">Кратко. Ярко. Интересно</p>
+                </div>
+            </div>
+        </div>
+        <div id="info">
+            <div class="info_1">
+                <div class="info_1a" >10</div>
+                <div class="info_1b">РОСПИСЕЙ ПРОВЕДЕНО</div>
+            </div>
+            <div class="info_2">
+                <div class="info_1a" >20</div>
+                <div class="info_1b">СЧАСТЛИВЫХ МОЛОДОЖЕНОВ</div>
+            </div>
+            <div class="info_3">
+                <div class="info_1a" >308</div>
+                <div class="info_1b">ДОВОЛЬНЫХ ГОСТЕЙ</div>
+            </div>
+            <div class="info_4">
+                <div class="info_1a" >423</div>
+                <div class="info_1b">ЗАПОМИНАЮЩИХСЯ ФОТО</div>
+            </div>
+        </div>
+        <div id="onas">
+            <p class="p4"><font color="red"> ЛЮБИМ</font> СВОЕ ДЕЛО</p>
+            <p class="p5">Мы – <b>дуэт DeLis</b> – сами влюбленная семейная пара, а также осознанные родители, которые выбрали природосообразный образ жизни. Именно поэтому, мы с уверенностью можем предложить услугу объединения сердец на выездной свадебной церемонии, так как
+                сами транслируем энергию тепла и любви
+            </p>
+            <img class="infoimg" src="images/qqqq.png" width="490">
+        </div>
+        <div id="vonas">
+            <br>
+            <center>
+                <p class="vnas">ПОЧЕМУ ВЫБИРАЮТ НАС</p>
+            </center>
+            <div class="tablica">
+                <div class="yacheika">
+                    <img class="block1" src="images/web.png" width="100">
+                    <p class="block1t">КАЧЕСТВО</p>
+                    <p class="block1ta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                </div>
+                <div class="yacheika">
+                    <img class="block1" src="images/interface.png" width="100">
+                    <p class="block1t">МУЗЫКА</p>
+                    <p class="block1ta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                </div>
+                <div class="yacheika">
+                    <img class="block1" src="images/light.png" width="100">
+                    <p class="block1t">ДУШЕВНОСТЬ</p>
+                    <p class="block1ta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                </div>
+            </div>
+            <div class="tablica1">
+                <div class="yacheika">
+                    <img class="block1" src="images/technology.png" width="100">
+                    <p class="block1t">ВКУС</p>
+                    <p class="block1ta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                </div>
+                <div class="yacheika">
+                    <img class="block1" src="images/Ellipse.png" width="100">
+                    <p class="block1t">РОМАНТИКА</p>
+                    <p class="block1ta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                </div>
+                <div class="yacheika">
+                    <img class="block1" src="images/vintage-armchair.png" width="100">
+                    <p class="block1t">КОМФОРТ</p>
+                    <p class="block1ta">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                </div>
+                <div class="empty1"></div>
+                <p class="what"></p>
+            </div>
+            <div id="yak2">
+                <section id="about">
+                    <div class="about">НАШЕ ПОРТФОЛИО</div>
+                    <div class="workswho">
+                        <div class="yacheikaabout">
+                            <img src="images/about/1.png" width="200">
+                        </div>
+                        <div class="yacheikaabout">
+                            <img src="images/about/2.png" width="200">
+                        </div>
+                        <div class="yacheikaabout">
+                            <img src="images/about/3.png" width="200">
+                        </div>
+                        <div class="yacheikaabout">
+                            <img src="images/about/4.png" width="200">
+                        </div>
+                    </div>
+                    <div class="aboutfoto1">
+                        <div class="yacheikaabout">
+                            <img src="images/about/5.png" width="200">
+                        </div>
+                        <div class="yacheikaabout">
+                            <img src="images/about/6.png" width="200">
+                        </div>
+                        <div class="yacheikaabout">
+                            <img src="images/about/7.png" width="200">
+                        </div>
+                        <div class="yacheikaabout">
+                            <img src="images/about/8.png" width="200">
+                        </div>
+                    </div>
+                    <div class="about1">ВАМ ПОНРАВИЛИСЬ НАШИ РАБОТЫ?</div>
+                    <div class="button_indexz">
+                        <button class="zakaz1">ЗАКАЗАТЬ РОСПИСЬ</button>
+                    </div>
+                </section>
+                <div id="k">
+                    <div id="vonas">
+                        <br>
+                        <center>
+                            <p class="vnas">КАК ЭТО РАБОТАЕТ</p>
+                        </center>
+                        <div class="aboutfoto2">
+                            <div class="yacheikaworks">
+                                <img src="images/works/1.png" width="150">
+                                <p class="workstext"> ЗАХОДИТЕ НА САЙТ</p>
+                            </div>
+                            <div class="yacheikaworks">
+                                <img src="images/works/2.png" width="150">
+                                <p class="workstext"> НАЖИМАЕТЕ КНОПКУ<br>“ЗАКАЗАТЬ”</p>
+                            </div>
+                            <div class="yacheikaworks">
+                                <img src="images/works/3.png" width="150">
+                                <p class="workstext"> ОСТАВЛЯЕТЕ СВОЙ<br>ТЕЛЕФОН</p>
+                            </div>
+                            <div class="yacheikaworks">
+                                <img src="images/works/4.png" width="150">
+                                <p class="workstext"> В ТЕЧЕНИИ 5 МИНУТ<br>С ВАМИ СВЯЖЕТСЯ<br>НАШ МЕНЕДЖЕР</p>
+                            </div>
+                            <div class="yacheikaworks">
+                                <img src="images/works/5.png" width="150">
+                                <p class="workstext"> НАЗНАЧАЕТЕ ДАТУ<br>И ОТДЫХАЕТЕ</p>
+                            </div>
+                        </div>
+                        <div class="empty1"></div>
+                    </div>
+                </div>
+                <!--Как это работает-->
+                <div id = "b">
+                    <div id="blog">НАШ БЛОГ</div>
+                    <div id="r"></div>
+                    <div id="tableblog">
+                        <div id="blockblog">
+                            <div id="blockblogimg1"></div>
+                            <p class="text1">ВЫБИРАЕМ СВАДЕБНЫЕ ПЛАТЬЯ</p>
+                            <p class="text2">Максим Наваров | 11 Марта, 2016</p>
+                            <p class="text3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaсв</p>
+                            <a href="#">
+                                <p class="text4">ЧИТАТЬ ДАЛЬШЕ</p>
+                            </a>
+                        </div>
+                        <div id="blockblog">
+                            <div id="blockblogimg2"></div>
+                            <p class="text1">ОБРУЧАЛЬНЫЕ КОЛЬЦА</p>
+                            <p class="text2">Максим Наваров | 11 Марта, 2016</p>
+                            <p class="text3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaсв</p>
+                            <a href="#">
+                                <p class="text4">ЧИТАТЬ ДАЛЬШЕ</p>
+                            </a>
+                        </div>
+                        <div id="blockblog">
+                            <div id="blockblogimg3"></div>
+                            <p class="text1">ВАЖНОСТЬ МУЗЫКИ</p>
+                            <p class="text2">Максим Наваров | 11 Марта, 2016</p>
+                            <p class="text3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaсв</p>
+                            <a href="#">
+                                <p class="text4">ЧИТАТЬ ДАЛЬШЕ</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="page">
+                        <a href="#lef"><img src="images/arrowsleft.png">   </a>
+                        <a href="#rin">   <img src="images/arrowsring.png"></a>
+                    </div>
+                </div>
+                <!-- блог -->
+                <div id = "o">
+                    <div id="otziv">ОТЗЫВЫ КЛИЕНТОВ</div>
+                    <div id="r"></div>
+                    <div class="otzivt">
+                        <div id="yachey">
+                            <div id="yacheyimg1"></div>
+                            <p class="otext">Анна и Максим</p>
+                            <p class="textotziv">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
+                        </div>
+                        <div id="yachey">
+                            <div id="yacheyimg2"></div>
+                            <p class="otext">Влад и Наташа</p>
+                            <p class="textotziv">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
+                        </div>
+                        <div id="yachey">
+                            <div id="yacheyimg3"></div>
+                            <p class="otext">Дмитрий и Васелиса</p>
+                            <p class="textotziv">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
+                        </div>
+                        <div id="yachey">
+                            <div id="yacheyimg4"></div>
+                            <p class="otext">Денис и Роберта</p>
+                            <p class="textotziv">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Dui</p>
+                        </div>
+                    </div>
+                    <div id="page">
+                        <a href="#lef"><img src="images/pagesr.png">   </a>
+                        <a href="#rin">   <img src="images/pagesl.png"></a>
+                    </div>
+                </div>
+                <!-- отзывы -->
+                <div id="g">
+                    <div id="blog">Гарантия</div>
+                    <div id="r"></div>
+                    <div id="#conteyner">
+                        <div id = "text1">Мы полность. уверены в себе. Именно поэтому мы готовы возвратить все Ваши затраченные средства, если Вы останетесь недовольны церемонией.</div>
+                    </div>
+                    <div id="#conteyner">
+                        <div id = "gold"></div>
+                    </div>
+                    <div id="#conteyner">
+                        <div id="text2">Мы занимаемся этим уже 3 года, поэтому способны воплотить на высочайшем уровне все ваши идеи
+                            без страха неудачи. Delis это уровень
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        <footer class="footer">
+            <div class="footer_support">
+                Служба поддержки : <font color="red">delis@siter.ru</font>
+            </div>
+            <div class="footer_copy">
+                ©2016 <a class="link" href="">Политика конфиденциальност</a>
+                <a  class="link" href="">Гарантия возврата</a>
+                <a  class="link" href="">Delis</a>
+            </div>
+            <DIV ID = "toTop" > ^ Наверх </DIV >
+</body>
+</html>
